@@ -43,13 +43,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Verify Sample PDF Exists
-
-The sample PDF should already exist at `backend/data/sample_notes.pdf`. If it doesn't, you can generate it:
-
-```bash
-python backend/create_sample_pdf.py
-```
 
 ## Running the Application
 
