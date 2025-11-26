@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic AI Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-root">
+        <header class="top-bar">
+            <div class="top-bar-inner">
+                <div class="brand-group">
+                    <div class="brand-icon">
+                        <img src="logo.png" alt="Agentic AI Tutor" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div>
+                        <p class="eyebrow">AI Tutor</p>
+                        <h1>Clario</h1>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="student-pill">
+                        <label for="studentId">Student : </label>
+                        <input type="text" id="studentId" placeholder="Enter Student ID">
+                    </div>
+                    <div class="pdf-controls">
+                        <input type="file" id="pdfUpload" accept=".pdf">
+                        <label for="pdfUpload" class="pill-btn">Select PDF</label>
+                        <button class="pill-btn ghost" onclick="uploadPDF()">Upload PDF</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-layout">
+            <div class="chat-scroll">
+                <div class="chat-inner">
+                    <div class="message ai">
+                        <div class="message-meta">AI Tutor</div>
+                        <div id="responseBox" class="message-body">Hi there, how can I help you today?</div>
+                    </div>
+                    <div id="aiLoader" class="loader" role="status" aria-live="polite">
+                        <span class="loader-dot"></span>
+                        <span class="loader-dot"></span>
+                        <span class="loader-dot"></span>
+                        <span class="loader-text">Thinking...</span>
+                    </div>
+                    <div id="uploadStatus" class="status-text"></div>
+
+                    <section id="quizSubmissionBox" class="quiz-panel" style="display: none;">
+                        <div class="quiz-header">
+                            <h4>Submit Quiz: <span id="quizTopicDisplay"></span></h4>
+                            <p>Review your answers before submitting.</p>
+                        </div>
+                        <div id="quizForm"></div>
+                        <button class="pill-btn primary" onclick="submitQuiz()">Submit Answers</button>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="composer">
+            <div class="composer-inner">
+                <textarea id="userInput" placeholder="Message AI Tutor..." rows="3"></textarea>
+                <div class="composer-actions">
+                    <button class="pill-btn primary" onclick="getAnswer()">Ask Tutor</button> 
+                    <button class="pill-btn secondary" onclick="generateQuiz()">Generate Quiz</button>
+                    <button class="pill-btn ghost" onclick="getReport()">Progress Report</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

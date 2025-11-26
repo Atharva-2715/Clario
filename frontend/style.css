@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #ffffff;
+    color: #111827;
+    margin: 0;
+}
+
+.app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.top-bar-inner {
+    width: 100%;
+    max-width: 960px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.eyebrow {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.brand-group h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.student-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    background: #ffffff;
+}
+
+.student-pill label {
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+#studentId {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #0f172a;
+    min-width: 140px;
+}
+
+#studentId:focus {
+    outline: none;
+}
+
+.pdf-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pdf-controls input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.pill-btn {
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background: #f7f7f8;
+    color: #111827;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.pill-btn:hover {
+    background: #efeff0;
+}
+
+.pill-btn.primary {
+    background: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.pill-btn.primary:hover {
+    background: #a7f3d0;
+}
+
+.pill-btn.secondary {
+    background: #dbeafe;
+    color: #0f172a;
+    border-color: #bfdbfe;
+}
+
+.pill-btn.secondary:hover {
+    background: #bfdbfe;
+}
+
+.pill-btn.ghost {
+    background: #f7f7f8;
+    color: #111827;
+}
+
+.chat-layout {
+    flex: 1;
+    padding-top: 76px;
+    padding-bottom: 120px;
+}
+
+.chat-scroll {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-inner {
+    width: 100%;
+    max-width: 800px;
+    padding: 32px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fadeIn 0.3s ease;
+}
+
+.message-meta {
+    font-size: 13px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.message-body {
+    border-radius: 18px;
+    padding: 16px 20px;
+    border: 1px solid #e5e7eb;
+    background: #f7f7f8;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.message.user .message-body {
+    background: #dbeafe;
+}
+
+.loader {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    background: #f7f7f8;
+    width: fit-content;
+}
+
+.loader-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #9ca3af;
+    animation: pulse 1s infinite;
+}
+
+.loader-text {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.status-text {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.quiz-panel {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    background: #f7f7f8;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.quiz-header h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.quiz-header p {
+    margin: 4px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+#quizForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#quizForm > div {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 12px;
+    background: #ffffff;
+}
+
+.composer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff 40%);
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+}
+
+.composer-inner {
+    width: 100%;
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.composer textarea {
+    border-radius: 20px;
+    background: #f7f7f8;
+    padding: 16px 18px;
+    font-size: 15px;
+    resize: vertical;
+    min-height: 100px;
+    color: #111827;
+}
+
+.composer textarea:focus {
+    outline: none;
+    border-color: #a5b4fc;
+}
+
+.composer-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #e5e7eb;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f7f7f8;
+}
+
+pre {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 10px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .top-bar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .student-pill {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .pdf-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .composer textarea {
+        min-height: 80px;
+    }
+
+    .composer-actions {
+        justify-content: flex-start;
+    }
+}
